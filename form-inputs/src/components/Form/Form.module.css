@@ -18,6 +18,10 @@ p{
     padding: 48px 0px 0px 96px;
     gap: 12px;
 }
+.title-container{
+    display: flex;
+    gap: 48px;
+}
 
 .desc{
   padding-bottom: 48px;
@@ -106,7 +110,12 @@ p{
     cursor: pointer;
     color: white;
 }
-
+.error{
+    height: fit-content;
+    padding: 24px;
+    background: rgb(230, 31, 31);
+    border-radius: 12px;
+}
 .control-btns input:hover{
     background-color: rgb(20, 117, 117);
 }
