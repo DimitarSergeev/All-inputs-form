@@ -169,7 +169,7 @@ export const Form = () => {
             default: break;
         }
     }
-    //Sending a post request with correct data
+    //Sending a post request with correct data. I don't know how to use postBin 
     const submitHandler = (e) => {
         e.preventDefault()
         const allGood = Object.values(errors).some(x => x !== true) && !Object.values(errors).some(x => x === '')
