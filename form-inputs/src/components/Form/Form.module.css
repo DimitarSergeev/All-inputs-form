@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: white; */
+}
+h1,
+p{
+    color: white;
+}
+
+.form-container{
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 0px 0px 96px;
+    gap: 12px;
+}
+
+.desc{
+  padding-bottom: 48px;
+}
+
+.form{
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   gap: 12px;
+}
+.text-inputs{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 6px;
+}
+
+.text-inputs input,
+.number-inputs input{
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 6px;
+}
+.date-title{
+    align-self: flex-start;
+}
+
+.date-inputs,
+.message-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4px;
+}
+.text-inputs p,
+.date-inputs p,
+.number-inputs p,
+.message-container p,
+.button-inputs p{
+    text-align: start;
+    align-self: center;
+}
+
+.number-inputs{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 6px;
+}
+.message-container{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+}
+.message-container textarea,
+.date-inputs input{
+    border: none;
+    border-radius: 3px;
+}
+
+.button-inputs{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+.buttons,
+.color{
+    display: flex;
+    gap: 12px;
+    text-align: center;
+}
+
+.buttons input[type='checkbox'],
+.buttons input[type='radio']{
+    align-self:center;
+}
+
+.control-btns{
+    display: flex;
+    gap: 24px;
+}
+.control-btns input{
+    font-size: 24px;
+    background-color: transparent;
+    padding: 12px 24px;
+    border: 2px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.control-btns input:hover{
+    background-color: rgb(20, 117, 117);
+}
+
+.divider{
+    width: 100%;
+    height: 0.5px;
+    background-color: white;
+    margin-bottom: 12px;
+}
