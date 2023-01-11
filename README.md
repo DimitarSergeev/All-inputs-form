@@ -27,23 +27,23 @@ Job interview - Form task
 
  This project represent form with all kinds of input data.
  ##  Еach input type expects to receive:
- -> [email]: must to be a valid email 
- -> [password]: need to be at least 6 charters 
- -> [text]: need to be at least 6 charters 
- -> [search]: need to be at least 1 charters 
- -> [url]: must to be a valid url address
- -> [date]: required
- -> [dateLocalTime]: required
- -> [month]: required
- -> [week]: required
- -> [time]: required
- -> [number]: must to be only numbers
- -> [tel]: Must to be exactly 10 numbers
- -> [textarea]: need to be at least 10 charters 
- -> [color] : required
- -> [file] : need to upload file #not required#
- -> [radio]: not required
- -> [checkbox]: not required
+ - [email]: must to be a valid email 
+ - [password]: need to be at least 6 charters 
+ - [text]: need to be at least 6 charters 
+ - [search]: need to be at least 1 charters 
+ - [url]: must to be a valid url address
+ - [date]: required
+ - [dateLocalTime]: required
+ - [month]: required
+ - [week]: required
+ - [time]: required
+ - [number]: must to be only numbers
+ - [tel]: Must to be exactly 10 numbers
+ - [textarea]: need to be at least 10 charters 
+ - [color] : required
+ - [file] : need to upload file #not required#
+ - [radio]: not required
+ - [checkbox]: not required
  
  -> submit: send post request to url
  -> reset : reset form inputs and clear state 
