@@ -1,15 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* color: white; */
 }
+
 h1,
-p{
+p {
     color: white;
 }
 
-.form-container{
+.form-container {
     width: 70%;
     height: 100vh;
     display: flex;
@@ -18,90 +19,98 @@ p{
     padding: 48px 0px 0px 96px;
     gap: 12px;
 }
-.title-container{
+
+.title-container {
     display: flex;
     gap: 48px;
 }
 
-.desc{
-  padding-bottom: 48px;
+.desc {
+    padding-bottom: 48px;
 }
 
-.form{
-   display: flex;
-   flex-direction: column;
-   width: 80%;
-   gap: 12px;
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 12px;
 }
-.text-inputs{
+
+.text-inputs {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 6px;
 }
 
 .text-inputs input,
-.number-inputs input{
+.number-inputs input {
     height: 20px;
     border: none;
     border-radius: 3px;
     padding-left: 6px;
 }
-.date-title{
+
+.date-title {
     align-self: flex-start;
 }
 
 .date-inputs,
-.message-container{
+.message-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 4px;
 }
+
 .text-inputs p,
 .date-inputs p,
 .number-inputs p,
 .message-container p,
-.button-inputs p{
+.button-inputs p {
     text-align: start;
     align-self: center;
 }
 
-.number-inputs{
+.number-inputs {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 6px;
 }
-.message-container{
-   display: grid;
-   grid-template-columns: repeat(2,1fr);
+
+.message-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .message-container textarea,
-.date-inputs input{
+.date-inputs input {
     border: none;
     border-radius: 3px;
 }
 
-.button-inputs{
+.button-inputs {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
+
 .buttons,
-.color{
+.color {
     display: flex;
     gap: 12px;
     text-align: center;
 }
 
 .buttons input[type='checkbox'],
-.buttons input[type='radio']{
-    align-self:center;
+.buttons input[type='radio'] {
+    align-self: center;
 }
 
-.control-btns{
+.control-btns {
     display: flex;
     gap: 24px;
 }
-.control-btns input{
+
+.control-btns input {
     font-size: 24px;
     background-color: transparent;
     padding: 12px 24px;
@@ -110,17 +119,19 @@ p{
     cursor: pointer;
     color: white;
 }
-.error{
+
+.error {
     height: fit-content;
     padding: 24px;
     background: rgb(230, 31, 31);
     border-radius: 12px;
 }
-.control-btns input:hover{
+
+.control-btns input:hover {
     background-color: rgb(20, 117, 117);
 }
 
-.divider{
+.divider {
     width: 100%;
     height: 0.5px;
     background-color: white;

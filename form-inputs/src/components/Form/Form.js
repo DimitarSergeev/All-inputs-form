@@ -16,11 +16,11 @@ export const Form = () => {
         month: '',
         week: '',
         time: '',
-        number:'',
-        tel:'',
+        number: '',
+        tel: '',
         textarea: '',
         color: '',
-        file:''
+        file: ''
     });
     const [data, setData] = useState({
         text: '',
@@ -42,25 +42,25 @@ export const Form = () => {
         file: File
     })
 
-    const resetForm = ()=>{
+    const resetForm = () => {
         setData({
             text: '',
-        email: '',
-        password: '',
-        URL: '',
-        search: '',
-        date: '',
-        localDateTime: '',
-        month: '',
-        week: '',
-        time: '',
-        number: '',
-        tel: '',
-        textarea: '',
-        checkbox: Boolean,
-        radio: '',
-        color: '',
-        file: File
+            email: '',
+            password: '',
+            URL: '',
+            search: '',
+            date: '',
+            localDateTime: '',
+            month: '',
+            week: '',
+            time: '',
+            number: '',
+            tel: '',
+            textarea: '',
+            checkbox: Boolean,
+            radio: '',
+            color: '',
+            file: File
         })
     }
 
@@ -173,14 +173,14 @@ export const Form = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         const allGood = Object.values(errors).some(x => x !== true) && !Object.values(errors).some(x => x === '')
-      
-       if (allGood) {
-          formService.postData(data)
-          .then(()=>{
-            alert('request sent successfully')
-          })
-       }
-      
+
+        if (allGood) {
+            formService.postData(data)
+                .then(() => {
+                    alert('request sent successfully')
+                })
+        }
+
     }
 
     return (
@@ -215,10 +215,10 @@ export const Form = () => {
                 {errors.month &&
                     <p className={styles.error}>Please select month</p>
                 }
-                 {errors.week &&
+                {errors.week &&
                     <p className={styles.error}>Please select week</p>
                 }
-                 {errors.date &&
+                {errors.date &&
                     <p className={styles.error}>Please select time</p>
                 }
                 {errors.number &&
@@ -230,7 +230,7 @@ export const Form = () => {
                 {errors.textarea &&
                     <p className={styles.error}>Message need to be at least 10 charters </p>
                 }
-                 {errors.color &&
+                {errors.color &&
                     <p className={styles.error}>Please pick a color </p>
                 }
                 {errors.file &&
@@ -242,11 +242,11 @@ export const Form = () => {
             <form className={styles.form} onSubmit={submitHandler}>
                 <div className={styles['text-inputs']}>
                     <p >Text inputs :</p>
-                    <input type="text" placeholder="Put text" name='text' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='text-input'/>
+                    <input type="text" placeholder="Put text" name='text' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='text-input' />
                     <input type="email" placeholder='Put email' name='email' onChange={changeHandler} onBlur={(e) => validate(e)} />
                     <input type="password" placeholder='Put password' name='password' onChange={changeHandler} onBlur={(e) => validate(e)} />
-                    <input type="url" placeholder='Put URL' name='URL' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='url-input'/>
-                    <input type="search" placeholder='Search something' name='search' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='search-input'/>
+                    <input type="url" placeholder='Put URL' name='URL' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='url-input' />
+                    <input type="search" placeholder='Search something' name='search' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='search-input' />
                 </div>
                 <p className={styles['date-title']}>Date inputs :</p>
                 <div className={styles['date-inputs']}>
@@ -295,7 +295,7 @@ export const Form = () => {
                 <div className={styles.divider}></div>
 
                 <div className={styles['control-btns']}>
-                    <input type="submit" data-testid='submit-btn'/>
+                    <input type="submit" data-testid='submit-btn' />
                     <input type="reset" data-testid='reset-btn' onClick={resetForm} />
                 </div>
             </form>
