@@ -26,7 +26,7 @@ Job interview - Form task
  ## Description 
 
  This project represent form with all kinds of input data.
- Еach input type expects to receive:
+ ##  Еach input type expects to receive:
  -> [email]: must to be a valid email 
  -> [password]: need to be at least 6 charters 
  -> [text]: need to be at least 6 charters 
