@@ -32,11 +32,11 @@ Job interview - Form task
  - [text]: need to be at least 6 charters 
  - [search]: need to be at least 1 charters 
  - [url]: must to be a valid url address
- - [date]: required
- - [dateLocalTime]: required
- - [month]: required
- - [week]: required
- - [time]: required
+ - [date]: date required
+ - [dateLocalTime]: dateLocal required
+ - [month]: month required
+ - [week]: week required
+ - [time]: time required
  - [number]: must to be only numbers
  - [tel]: Must to be exactly 10 numbers
  - [textarea]: need to be at least 10 charters 
