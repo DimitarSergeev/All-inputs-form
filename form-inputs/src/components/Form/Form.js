@@ -177,7 +177,7 @@ export const Form = () => {
        if (allGood) {
           formService.postData(data)
           .then(()=>{
-            console.log('Yessssssssssssssssssssss')
+            alert('request sent successfully')
           })
        }
       
@@ -190,6 +190,7 @@ export const Form = () => {
                     <h1 className={styles.title}>Form Inputs</h1>
                     <p className={styles.desc}>Please fill all inputs and send !</p>
                 </div>
+
                 {errors.text &&
                     <p className={styles.error} data-testid="error-message">Text need to be at least 6 charters</p>
                 }
@@ -295,7 +296,7 @@ export const Form = () => {
 
                 <div className={styles['control-btns']}>
                     <input type="submit" data-testid='submit-btn'/>
-                    <input type="reset" data-testid='reset-btn' onClick={resetForm}/>
+                    <input type="reset" data-testid='reset-btn' onClick={resetForm} />
                 </div>
             </form>
         </div>

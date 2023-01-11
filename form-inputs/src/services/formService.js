@@ -6,7 +6,6 @@ export const postData = async (data) => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json' ,
-                'X-Status': 'Awesome'
             },
             body: JSON.stringify(data)
         });

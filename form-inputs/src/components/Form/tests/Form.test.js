@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent, getByTestId} from '@testing-library/react'
+import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import { Form } from '../Form'
 
@@ -29,19 +29,47 @@ test('Should have submit & reset buttons', () => {
 // Testing if user sees the error
 
 test('Should have error messages', async () => {
-  const {container}  = render(<Form />)
-    const textInput = screen.getByTestId('text-input')
-    const urlInput = screen.getByTestId('url-input')
+    const { container } = render(<Form />)
 
-    await act(async ()=>{
-        textInput.textContent = 'nqma'
+    await act(async () => {
+        const textInput = screen.getByTestId('text-input')
+        fireEvent.change(textInput, { target: { value: 'nesh' } })
         fireEvent.blur(textInput)
     })
-    await act(async ()=>{
-        urlInput.textContent = 'nesho si'
+    await act(async () => {
+        const urlInput = screen.getByTestId('url-input')
+        fireEvent.change(urlInput, { target: { value: 'nesh' } })
         fireEvent.blur(urlInput)
     })
     expect(container.innerHTML).toMatch('Text need to be at least 6 charters')
     expect(container.innerHTML).toMatch('Url is invalid')
+})
 
+test('There should be no error', async () => {
+    const { container } = render(<Form />)
+
+    await act(async () => {
+        const textInput = screen.getByTestId('text-input')
+        fireEvent.change(textInput, { target: { value: 'some text' } })
+        fireEvent.blur(textInput)
+    })
+    await act(async () => {
+        const urlInput = screen.getByTestId('url-input')
+        fireEvent.change(urlInput, { target: { value: 'https://asdasd.com' } })
+        fireEvent.blur(urlInput)
+    })
+    expect(container.innerHTML).not.toMatch('Text need to be at least 6 charters')
+    expect(container.innerHTML).not.toMatch('Url is invalid')
+})
+test('Reset button functionality', async () => {
+    const { container } = render(<Form />)
+
+    await act(async () => {
+        const textInput = screen.getByTestId('text-input')
+        const resetBtn = screen.getByTestId('reset-btn')
+        fireEvent.change(textInput, { target: { value: 'some text' } })
+        fireEvent.click(resetBtn)
+    })
+
+    expect(container.innerHTML).not.toMatch('some text')
 })
