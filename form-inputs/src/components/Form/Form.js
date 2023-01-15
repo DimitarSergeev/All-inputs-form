@@ -172,8 +172,7 @@ export const Form = () => {
     //Sending a post request with correct data. 
     const submitHandler = (e) => {
         e.preventDefault()
-        const allGood = Object.values(errors).some(x => x !== true) && !Object.values(errors).some(x => x === '')
-
+        const allGood = !Object.values(errors).find(x => x === true) && !Object.values(errors).some(x => x === '')
         if (allGood) {
             formService.postData(data)
                 .then(() => {
@@ -239,7 +238,7 @@ export const Form = () => {
 
             </section>
 
-            <form className={styles.form} onSubmit={submitHandler}>
+            <form className={styles.form} onSubmit={submitHandler} data-testid='form'>
                 <div className={styles['text-inputs']}>
                     <p >Text inputs :</p>
                     <input

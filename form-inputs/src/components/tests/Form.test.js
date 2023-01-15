@@ -1,7 +1,8 @@
-import { render, screen, cleanup, fireEvent } from '@testing-library/react'
+import { render, screen, cleanup, fireEvent, waitFor } from '@testing-library/react'
+import * as jest from 'jest'
 import { act } from 'react-dom/test-utils'
 import { Form } from '../Form/Form'
-
+import * as formService from '../../services/formService'
 
 afterEach(() => {
     cleanup()
@@ -78,3 +79,53 @@ test('Reset button functionality', async () => {
 
     expect(container.innerHTML).not.toMatch('some text')
 })
+
+test('Testing the pass-to-query logic with correct data ', () => {
+
+    const errors = {
+        URL: false,
+        color: false,
+        date: false,
+        email: false,
+        file: false,
+        localDateTime: false,
+        month: false,
+        number: false,
+        password: false,
+        radio: false,
+        search: false,
+        tel: false,
+        text: false,
+        textarea: false,
+        time: false,
+        week: false
+    }
+
+    const allGood = !Object.values(errors).find(x => x === true) && !Object.values(errors).some(x => x === '')
+    expect(allGood).toBe(true)
+});
+test('Testing the pass-to-query logic with wrong data ', () => {
+
+    const errors = {
+        URL: false,
+        color: true,
+        date: false,
+        email: false,
+        file: false,
+        localDateTime: true,
+        month: false,
+        number: false,
+        password: false,
+        radio: false,
+        search: false,
+        tel: false,
+        text: true,
+        textarea: false,
+        time: false,
+        week: false
+    }
+
+    const allGood = !Object.values(errors).find(x => x === true) && !Object.values(errors).some(x => x === '')
+    expect(allGood).toBe(false)
+});
+
