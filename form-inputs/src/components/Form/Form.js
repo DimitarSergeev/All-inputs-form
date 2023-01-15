@@ -169,7 +169,7 @@ export const Form = () => {
             default: break;
         }
     }
-    //Sending a post request with correct data. I don't know how to use postBin 
+    //Sending a post request with correct data. 
     const submitHandler = (e) => {
         e.preventDefault()
         const allGood = Object.values(errors).some(x => x !== true) && !Object.values(errors).some(x => x === '')
@@ -242,61 +242,169 @@ export const Form = () => {
             <form className={styles.form} onSubmit={submitHandler}>
                 <div className={styles['text-inputs']}>
                     <p >Text inputs :</p>
-                    <input type="text" placeholder="Put text" name='text' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='text-input' />
-                    <input type="email" placeholder='Put email' name='email' onChange={changeHandler} onBlur={(e) => validate(e)} />
-                    <input type="password" placeholder='Put password' name='password' onChange={changeHandler} onBlur={(e) => validate(e)} />
-                    <input type="url" placeholder='Put URL' name='URL' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='url-input' />
-                    <input type="search" placeholder='Search something' name='search' onChange={changeHandler} onBlur={(e) => validate(e)} data-testid='search-input' />
+                    <input
+                        type="text"
+                        placeholder="Put text"
+                        name='text'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                        data-testid='text-input'
+                    />
+                    <input
+                        type="email"
+                        placeholder='Put email'
+                        name='email'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
+                    <input
+                        type="password"
+                        placeholder='Put password'
+                        name='password'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
+                    <input
+                        type="url"
+                        placeholder='Put URL'
+                        name='URL'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                        data-testid='url-input'
+                    />
+                    <input
+                        type="search"
+                        placeholder='Search something'
+                        name='search'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                        data-testid='search-input'
+                    />
                 </div>
                 <p className={styles['date-title']}>Date inputs :</p>
                 <div className={styles['date-inputs']}>
                     <p>Pick Date:</p>
-                    <input type="date" name='date' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="date"
+                        name='date'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                     <p>Local Date:</p>
-                    <input type="datetime-local" name='localDateTime' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="datetime-local"
+                        name='localDateTime'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                     <p>Pick month:</p>
-                    <input type="month" name='month' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="month"
+                        name='month'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                     <p>Pick Week:</p>
-                    <input type="week" name='week' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="week"
+                        name='week'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                     <p>Pick time:</p>
-                    <input type="time" name='time' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="time"
+                        name='time'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                 </div>
                 <div className={styles['number-inputs']}>
                     <p>Number inputs :</p>
-                    <input type="number" placeholder='Put a number' name='number' onChange={changeHandler} onBlur={(e) => validate(e)} />
-                    <input type="tel" placeholder='Put phone number' name='tel' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                    <input
+                        type="number"
+                        placeholder='Put a number'
+                        name='number'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
+                    <input
+                        type="tel"
+                        placeholder='Put phone number'
+                        name='tel'
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    />
                 </div>
                 <div className={styles['message-container']}>
                     <p>Message:</p>
-                    <textarea name="textarea" id="" cols="50" rows="6" onChange={changeHandler} onBlur={(e) => validate(e)}></textarea>
+                    <textarea
+                        name="textarea"
+                        id=""
+                        cols="50"
+                        rows="6"
+                        onChange={changeHandler}
+                        onBlur={(e) => validate(e)}
+                    >
+
+                    </textarea>
                 </div>
                 <div className={styles['button-inputs']}>
                     <p>Button inputs :</p>
                     <div className={styles.buttons}>
                         <p>I wish to receive email</p>
-                        <input type="checkbox" name='checkbox' onChange={changeHandler} />
+                        <input
+                            type="checkbox"
+                            name='checkbox'
+                            onChange={changeHandler}
+                        />
                     </div>
                     <div className={styles.buttons}>
                         <p>Choose an option:</p>
-                        <input type="radio" name='radio' onChange={changeHandler} />
+                        <input
+                            type="radio"
+                            name='radio'
+                            onChange={changeHandler}
+                        />
                         <p >Yes</p>
-                        <input type="radio" name='radio' onChange={changeHandler} />
+                        <input
+                            type="radio"
+                            name='radio'
+                            onChange={changeHandler}
+                        />
                         <p>No</p>
                     </div>
                     <div className={styles.color}>
                         <p>Pick a colour</p>
-                        <input type="color" name='color' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                        <input
+                            type="color"
+                            name='color'
+                            onChange={changeHandler}
+                            onBlur={(e) => validate(e)}
+                        />
                     </div>
                     <div className={styles.file}>
-                        <input type="file" name='file' onChange={changeHandler} onBlur={(e) => validate(e)} />
+                        <input
+                            type="file"
+                            name='file'
+                            onChange={changeHandler}
+                            onBlur={(e) => validate(e)}
+                        />
                     </div>
                 </div>
 
                 <div className={styles.divider}></div>
 
                 <div className={styles['control-btns']}>
-                    <input type="submit" data-testid='submit-btn' />
-                    <input type="reset" data-testid='reset-btn' onClick={resetForm} />
+                    <input
+                        type="submit"
+                        data-testid='submit-btn'
+                    />
+                    <input
+                        type="reset"
+                        data-testid='reset-btn'
+                        onClick={resetForm}
+                    />
                 </div>
             </form>
         </div>

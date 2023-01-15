@@ -1,6 +1,6 @@
 import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
-import { Form } from '../Form'
+import { Form } from '../Form/Form'
 
 
 afterEach(() => {
@@ -33,11 +33,13 @@ test('Should have error messages', async () => {
 
     await act(async () => {
         const textInput = screen.getByTestId('text-input')
+        // set worng inupt value to render error message , validation need to be 6 or more charters 
         fireEvent.change(textInput, { target: { value: 'nesh' } })
         fireEvent.blur(textInput)
     })
     await act(async () => {
         const urlInput = screen.getByTestId('url-input')
+        // set invalid url to get error message 
         fireEvent.change(urlInput, { target: { value: 'nesh' } })
         fireEvent.blur(urlInput)
     })
@@ -50,14 +52,17 @@ test('There should be no error', async () => {
 
     await act(async () => {
         const textInput = screen.getByTestId('text-input')
+        // put correct data , 6 or more charters 
         fireEvent.change(textInput, { target: { value: 'some text' } })
         fireEvent.blur(textInput)
     })
     await act(async () => {
         const urlInput = screen.getByTestId('url-input')
+        // put correct data
         fireEvent.change(urlInput, { target: { value: 'https://asdasd.com' } })
         fireEvent.blur(urlInput)
     })
+    // Shold to not render a error messages 
     expect(container.innerHTML).not.toMatch('Text need to be at least 6 charters')
     expect(container.innerHTML).not.toMatch('Url is invalid')
 })

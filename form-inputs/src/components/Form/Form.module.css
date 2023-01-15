@@ -24,7 +24,9 @@ p {
     display: flex;
     gap: 48px;
 }
-
+.title{
+    text-align: start;
+}
 .desc {
     padding-bottom: 48px;
 }
